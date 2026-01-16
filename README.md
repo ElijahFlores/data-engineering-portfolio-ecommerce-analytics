@@ -1,12 +1,12 @@
 # Cross-Border E-commerce Analytics Platform
 
-## 🎯 Project Overview
+## Project Overview
 
 An end-to-end analytics engineering project demonstrating production-ready data pipelines for cross-border e-commerce operations. This project models revenue, taxes, and profitability across multiple sales channels (DTC website, TikTok Shop, Amazon) with robust data quality monitoring.
 
 **Portfolio Project for Analytics Engineer Role**
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Raw Data (CSV Files)
@@ -23,7 +23,7 @@ Data Quality Monitoring (Python + dbt tests)
 Business Insights (SQL queries)
 ```
 
-## 📊 Data Models
+## Data Models
 
 ### Staging Layer (`models/staging/`)
 - **stg_orders**: Cleaned order data from all sales channels
@@ -42,7 +42,7 @@ Business Insights (SQL queries)
 - **fct_revenue_daily**: Daily revenue metrics by channel and country
 - **fct_tax_filing_summary**: Monthly tax compliance reporting by jurisdiction
 
-## 🔑 Key Features
+## Key Features
 
 ### 1. Business-Critical Revenue Pipeline
 **Net Revenue Formula:**
@@ -93,7 +93,7 @@ Handles:
 - ✅ Clear naming conventions
 - ✅ Separation of concerns (staging → intermediate → marts)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 ```bash
@@ -127,7 +127,7 @@ dbt docs generate
 dbt docs serve  # Opens in browser at localhost:8080
 ```
 
-## 📈 Sample Business Insights
+## Sample Business Insights
 
 ### Revenue Analysis
 ```sql
@@ -169,7 +169,7 @@ FROM marts.fct_revenue_daily
 GROUP BY channel;
 ```
 
-## 🧪 Data Quality Results
+## Data Quality Results
 
 **Example Test Results:**
 ```
@@ -180,7 +180,7 @@ GROUP BY channel;
 ✅ Null rate: 0.00% in critical fields
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology | Purpose |
 |-----------|-----------|---------|
@@ -191,7 +191,7 @@ GROUP BY channel;
 | **Documentation** | dbt docs | Auto-generated data catalog with lineage |
 | **Version Control** | Git | Code management & collaboration |
 
-## 📚 Skills Demonstrated
+## Skills Demonstrated
 
 ### Technical Skills
 - ✅ **Advanced SQL**: CTEs, window functions, complex joins, aggregations
@@ -212,7 +212,7 @@ GROUP BY channel;
 - ✅ **Tax & Compliance**: VAT/duty calculations, audit readiness
 - ✅ **Stakeholder Communication**: Clear documentation, business metrics
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ecommerce-analytics-portfolio/
@@ -234,7 +234,7 @@ ecommerce-analytics-portfolio/
 └── README.md
 ```
 
-## 🎓 Learning Resources
+## Learning Resources
 
 - [dbt Documentation](https://docs.getdbt.com/)
 - [DuckDB SQL Reference](https://duckdb.org/docs/sql/introduction)
@@ -243,7 +243,7 @@ ecommerce-analytics-portfolio/
 
 
 **Project Stats:**
-- ⏱️ Completion Time: ~3 hours
-- 💻 Code: ~600 lines SQL + 250 lines Python
-- ✅ Test Coverage: 15+ data quality tests
-- 📊 Data Models: 9 models across 3 layers
+- Completion Time: ~3 hours
+- Code: ~600 lines SQL + 250 lines Python
+- Test Coverage: 15+ data quality tests
+- Data Models: 9 models across 3 layers
