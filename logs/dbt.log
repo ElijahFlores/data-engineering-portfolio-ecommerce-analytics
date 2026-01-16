@@ -1,0 +1,58 @@
+[0m08:41:59.847648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10953d940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b5ffaf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b612430>]}
+
+
+============================== 08:41:59.856307 | 92772e0b-a9b5-4d19-a428-923af426c897 ==============================
+[0m08:41:59.856307 [info ] [MainThread]: Running with dbt=1.7.19
+[0m08:41:59.856931 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/elijahflores/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt init ecommerce_analytics', 'send_anonymous_usage_stats': 'True'}
+[0m08:41:59.858714 [debug] [MainThread]: Starter project path: /Users/elijahflores/data-engineering-portfolio-ecommerce-analytics/venv/lib/python3.9/site-packages/dbt/include/starter_project
+[0m08:41:59.872759 [info ] [MainThread]: 
+Your new dbt project "ecommerce_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m08:41:59.873260 [info ] [MainThread]: Setting up your profile.
+[0m08:42:04.239426 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 5.1613684, "process_user_time": 0.899964, "process_kernel_time": 0.194111, "process_mem_max_rss": "111788032", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m08:42:04.239725 [debug] [MainThread]: Command `dbt init` succeeded at 08:42:04.239660 after 5.16 seconds
+[0m08:42:04.239896 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10953d940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b641100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b641070>]}
+[0m08:42:04.240072 [debug] [MainThread]: Flushing usage events
+[0m09:37:48.833215 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093a53a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b47a3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4cf850>]}
+
+
+============================== 09:37:48.837043 | b8609936-d92c-497e-b197-ce6b37454699 ==============================
+[0m09:37:48.837043 [info ] [MainThread]: Running with dbt=1.7.19
+[0m09:37:48.837250 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/elijahflores/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:37:48.837430 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/elijahflores/data-engineering-portfolio-ecommerce-analytics/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m09:37:48.838582 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.03586408, "process_user_time": 0.720996, "process_kernel_time": 0.119269, "process_mem_max_rss": "98222080", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m09:37:48.838731 [debug] [MainThread]: Command `dbt run` failed at 09:37:48.838687 after 0.04 seconds
+[0m09:37:48.838843 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093a53a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4abc40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4bc250>]}
+[0m09:37:48.838960 [debug] [MainThread]: Flushing usage events
+[0m09:39:25.304084 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a05b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b170d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b32130>]}
+
+
+============================== 09:39:25.306877 | 1aff2ef6-6786-44d1-9c68-ef863bb00e75 ==============================
+[0m09:39:25.306877 [info ] [MainThread]: Running with dbt=1.7.19
+[0m09:39:25.307100 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/elijahflores/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:39:25.307300 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/elijahflores/data-engineering-portfolio-ecommerce-analytics/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m09:39:25.308527 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.0311025, "process_user_time": 0.716506, "process_kernel_time": 0.123941, "process_mem_max_rss": "98025472", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m09:39:25.308689 [debug] [MainThread]: Command `dbt run` failed at 09:39:25.308641 after 0.03 seconds
+[0m09:39:25.308806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a05b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b07be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ae0670>]}
+[0m09:39:25.308924 [debug] [MainThread]: Flushing usage events

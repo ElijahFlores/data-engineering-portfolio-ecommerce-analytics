@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-16T09:40:09.674301",
+  "checks_passed": 2,
+  "checks_failed": 3,
+  "alerts": [
+    "\u26a0\ufe0f  Null Rate Check: Check failed - IO Error: No files found that match the pattern \"../data/raw/orders.csv\"",
+    "\u26a0\ufe0f  Revenue Reconciliation: Check failed - IO Error: No files found that match the pattern \"../data/raw/orders.csv\"",
+    "\u26a0\ufe0f  Tax Coverage: Check failed - IO Error: No files found that match the pattern \"../data/raw/orders.csv\""
+  ],
+  "status": "FAILED"
+}

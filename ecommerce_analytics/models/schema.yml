@@ -1,0 +1,144 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staging table for raw order data from multiple sales channels"
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order"
+        tests:
+          - unique
+          - not_null
+      
+      - name: order_date
+        description: "Date the order was placed"
+        tests:
+          - not_null
+      
+      - name: gross_sale_amount
+        description: "Total sale amount before discounts"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: order_status
+        description: "Current status of the order"
+        tests:
+          - accepted_values:
+              values: ['completed', 'refunded', 'cancelled']
+  
+  - name: stg_tax_transactions
+    description: "Staging table for tax and duty transactions"
+    columns:
+      - name: tax_transaction_id
+        description: "Unique identifier for each tax transaction"
+        tests:
+          - unique
+          - not_null
+      
+      - name: order_id
+        description: "Reference to the related order"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+      
+      - name: tax_amount
+        description: "Amount of tax collected"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: tax_type
+        description: "Type of tax (VAT or DUTY)"
+        tests:
+          - accepted_values:
+              values: ['VAT', 'DUTY']
+  
+  - name: stg_fulfillment_costs
+    description: "Staging table for order fulfillment and logistics costs"
+    columns:
+      - name: fulfillment_id
+        description: "Unique identifier for each fulfillment record"
+        tests:
+          - unique
+          - not_null
+      
+      - name: order_id
+        description: "Reference to the related order"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+  
+  - name: stg_refunds
+    description: "Staging table for customer refunds"
+    columns:
+      - name: refund_id
+        description: "Unique identifier for each refund"
+        tests:
+          - unique
+          - not_null
+      
+      - name: order_id
+        description: "Reference to the related order"
+        tests:
+          - not_null
+  
+  - name: int_order_revenue
+    description: "Intermediate model with comprehensive order economics and revenue calculations"
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        tests:
+          - unique
+          - not_null
+      
+      - name: net_revenue
+        description: "Net revenue after all costs and refunds"
+        tests:
+          - not_null
+  
+  - name: fct_revenue_daily
+    description: "Daily revenue metrics by channel and country"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_date
+            - channel
+            - destination_country
+    columns:
+      - name: total_orders
+        description: "Total number of orders"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: total_net_revenue
+        description: "Net revenue after all costs"
+        tests:
+          - not_null
+  
+  - name: fct_tax_filing_summary
+    description: "Monthly tax filing summary for compliance reporting"
+    columns:
+      - name: tax_month
+        description: "Month for tax reporting period"
+        tests:
+          - not_null
+      
+      - name: total_tax_collected
+        description: "Total tax amount collected"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
